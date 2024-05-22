@@ -7,7 +7,7 @@ return (
     <div>
         <select className='border border-primary w-60 rounded'>
             {options.map((opt:any,idx:number)=>(
-                <option>{opt.name}</option>
+                <option key={idx}>{opt.name}</option>
             ))}          
             
         </select>

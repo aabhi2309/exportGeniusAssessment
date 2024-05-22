@@ -28,7 +28,7 @@ const Product = () => {
                     <div className='flex flex-col gap-10'>
                         <div className='flex gap-10'>
                             {productData.horizontalTabs.map((tab,idx)=>(
-                            <div className={`cursor-pointer py-2 px-5 ${activeHT===idx?'border rounded border-primary text-primary':''}`} onClick={()=>setActiveHT(idx)}>{tab}</div>
+                            <div key={idx} className={`cursor-pointer py-2 px-5 ${activeHT===idx?'border rounded border-primary text-primary':''}`} onClick={()=>setActiveHT(idx)}>{tab}</div>
                             ))}
                         </div >
                         <div className='text-sm'>Gather information on international trade in a visually appealing way. Learn about the market trends easily and get all the essential information on the import and export of a country in the form of interactive graphics.</div>
@@ -48,14 +48,14 @@ const Product = () => {
                     {activeVT === idx &&
                         <div className='flex flex-col gap-5'>
                         {productData.horizontalTabs.map((tab,i)=>(
-                            <>
+                            <div key={i}>
                         <div className={`w-[80%] cursor-pointer py-1 px-3 border rounded border-primary text-black1 flex justify-between items-center` } onClick={()=>setActiveHT(i)}>{tab} {activeHT===i? <Image src='/a-u.svg' alt="productImag" width={20} height={20}/>  : <Image src='/a-d.svg' alt="productImag" width={20} height={20}/>} </div>
                         {activeHT===i && <div>
                             <Image src='/productImg.png' alt="productImage" width={300} height={250}/>
                             <div className='text-sm'>Gather information on international trade in a visually appealing way. Learn about the market trends easily and get all the essential information on the import and export of a country in the form of interactive graphics.</div>
 
                             </div>}
-                        </>
+                        </div>
                         ))}
                     </div >}
                     </>
